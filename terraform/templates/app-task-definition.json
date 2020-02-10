@@ -1,0 +1,28 @@
+[
+  {
+    "image": "${image_url}",
+    "name": "${container_name}",
+    "cpu": 128,
+    "memory": 128,
+    "essential": true,
+    "portMappings": [
+      {
+        "containerPort": 8000,
+        "hostPort": 0,
+        "protocol": "tcp"
+      }
+    ],
+    "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+            "awslogs-group": "${log_group_name}",
+            "awslogs-region": "${log_group_region}",
+            "awslogs-stream-prefix": "ecs"
+        }
+    },
+    "environment" : [
+        { "name" : "DATABASE_URI", "value" : "${database_uri}" }
+    ],
+    "mountPoints": []
+  }
+]

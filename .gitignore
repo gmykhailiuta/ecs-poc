@@ -1,0 +1,10 @@
+.venv
+__pycache__/
+*.py[cod]
+*$py.class
+app.db
+.pytest_cache
+**/.terraform
+.idea
+/*.tfstate*
+aws.sh
